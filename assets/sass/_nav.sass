@@ -60,12 +60,6 @@
       &:hover
         color: var(--theme)
 
-  &-brand
-    font-family: "IBM Plex Sans", sans-serif
-    font-size: 2em !important
-    padding-top: 0 !important
-    padding-bottom: 0 !important
-
   &-close
     display: flex
     justify-content: flex-start
@@ -102,19 +96,26 @@
 
   &-menu
     position: relative
-    padding: 10px 25px 10px 0
+    padding: 10px 25px
     height: 100%
     max-width: 1024px
     margin: 0 auto
     display: flex
     align-items: center
     justify-content: space-between
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif
+    font-weight: 300
+    letter-spacing: 0.02em
     a
       color: inherit
-      width: 100%
       display: block
-      padding: 10px 25px
-      font-size: 105%
+      padding: 10px 0
+      font-size: 1rem
+
+  &-brand
+    font-size: 1.25rem !important
+    font-weight: 400
+    letter-spacing: 0.03em
 
   &-pop
     position: fixed
@@ -123,5 +124,39 @@
   &-open
     animation: showMenu 0.5s cubic-bezier(0.52, 0.16, 0.24, 1) forwards
 
+  &-links
+    display: flex
+    align-items: center
+    gap: 2rem
+    a
+      font-size: 0.95rem
+      color: inherit
+      text-transform: capitalize
+      &:hover
+        color: var(--theme)
+
   &_item
     text-transform: capitalize
+
+.dark-mode-toggle
+  background: none
+  border: none
+  cursor: pointer
+  color: var(--text)
+  padding: 4px
+  display: flex
+  align-items: center
+  justify-content: center
+  border-radius: 4px
+  transition: opacity 0.2s
+  &:hover
+    opacity: 0.7
+  .icon-moon
+    display: none
+
+[data-mode="dim"] .dark-mode-toggle
+  .icon-sun
+    display: none
+  .icon-moon
+    display: block
+

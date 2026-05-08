@@ -381,9 +381,10 @@
   doc.addEventListener('click', function(event) {
     let target = event.target;
     let modeClass = 'color_choice';
-    let isModeToggle = containsClass(target, modeClass);
+    let isModeToggle = containsClass(target, modeClass) || (target.closest && target.closest('.' + modeClass)) || (target.closest && target.closest('.dark-mode-toggle'));
     if(isModeToggle) {
       setUserColorMode(true);
     }
   });
+
 })();
