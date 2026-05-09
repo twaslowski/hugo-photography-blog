@@ -2,7 +2,7 @@
   <nav class="nav-menu">
     <a href="{{ absURL "" }}" class="nav-brand nav_item">{{ site.Title }}</a>
     <div class="nav-links">
-      {{- range site.Data.menu.main }}
+      {{- range hugo.Data.menu.main }}
         <a href="{{ absURL .url }}" class="nav_item">{{ .item }}</a>
       {{- end }}
       <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
