@@ -7,12 +7,23 @@
 
 {{ $bg := $image }}
 
-{{ if eq (in $image "https://") false }}
-  {{ $bg = (printf "%s%s" $images_dir  $image) }}
-  {{ if in $image $images_dir }}
-    {{ $bg = $image }}
+{{ if in $image "https://" }}
+  {{/* Already a full URL, use as-is */}}
+{{ else }}
+  {{ $imageBaseURL := site.Params.imageBaseURL | default "" }}
+  {{ if $imageBaseURL }}
+    {{/* Strip leading slash if present */}}
+    {{ $path := strings.TrimPrefix "/" $image }}
+    {{/* Strip images/ prefix if present since imageBaseURL handles it */}}
+    {{ $path = strings.TrimPrefix "images/" $path }}
+    {{ $bg = printf "%s%s" $imageBaseURL $path }}
+  {{ else }}
+    {{ $bg = (printf "%s%s" $images_dir $image) }}
+    {{ if in $image $images_dir }}
+      {{ $bg = $image }}
+    {{ end }}
+    {{ $bg = absURL $bg }}
   {{ end }}
-  {{ $bg = absURL $bg }}
 {{ end }}
 
 {{ return $bg }}
