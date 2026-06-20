@@ -26,7 +26,7 @@ serving images.
 
 ## Install Newsroom Theme
 
-> [!NOTE] 
+> [!NOTE]
 > __hugo-extended version__ must be installed on your system for this theme to work as intended.
 
 ### Option 1: Add theme as a git submodule
@@ -71,47 +71,38 @@ You can configure the site as follows:
 
 1. **General Information**
 
-    Use `config.toml` file.
+   Use `config.toml` file.
 
 2. **menu**, **footer**
 
-    See the yaml files inside the `data/` directory.
+   See the yaml files inside the `data/` directory.
 
 ## Start publishing
 
-Follow the `exampleSite/`; specifically, the [content](https://github.com/onweru/newsroom/tree/master/exampleSite/content/post) directory
+Follow the `exampleSite/`; specifically,
+the [content](https://github.com/onweru/newsroom/tree/master/exampleSite/content/post) directory
 
 ### Dark Mode
 
-Today, operating systems have a system-wide __light ~ dark mode__ switch. Your website will adapt to the user's preferred lighting mode. Still, if the user wants to opt in or out of darkmode, there's a UI control for that too in the menu 😊.
+Today, operating systems have a system-wide *light/dark mode* switch. Your website will adapt to the user's
+preferred lighting mode. Still, if the user wants to opt in or out of darkmode, there's a UI control for that too in the
+menu.
 
-![Dark Mode](https://raw.githubusercontent.com/onweru/newsroom/master/images/screenshot-dark.png)
-
-#### Set a default lighting mode
-
-Using your site's config.toml file, set the value of `defaultMode` to either `"dark"` or `"light"`.
-
-If your site is built from a copy of the exampleSite, the field is already included; you only need to uncomment and set its value.
-
-> The UI control for toggling darkmode will remain in place. This way, the user can decide which mode they would like to use while browsing your website
-
-### Custom 404 Page
-
-![404 page](https://raw.githubusercontent.com/onweru/newsroom/master/images/404.png)
-
-### Syntax highlighting
-
-![Syntax Highlighting](https://raw.githubusercontent.com/onweru/newsroom/master/images/syntax.png) 
-
-If you wish, you can opt to [use Chroma](./exampleSite/config.toml#L17-L27).
+Note that the light and dark mode options in this fork are slightly different – they are loosely based on Solarized
+light and Gruvbox dark.
 
 ### I want to use disqus
 
-If you like, you could [use disqus on your site](https://github.com/onweru/newsroom/issues/2). To enable disqus on your site, simply, add the line below to you `config.toml` file. If you're working off the [exampleSite](https://github.com/onweru/newsroom/tree/master/exampleSite), the line is [already there](https://github.com/onweru/newsroom/blob/ad9b7a9f7ea266b539f846a2f3bdf080e648bb84/exampleSite/config.toml#L15-L16); just uncomment it.
+If you like, you could [use disqus on your site](https://github.com/onweru/newsroom/issues/2). To enable disqus on your
+site, simply, add the line below to you `config.toml` file. If you're working off
+the [exampleSite](https://github.com/onweru/newsroom/tree/master/exampleSite), the line
+is [already there](https://github.com/onweru/newsroom/blob/ad9b7a9f7ea266b539f846a2f3bdf080e648bb84/exampleSite/config.toml#L15-L16);
+just uncomment it.
 
 ```toml
 disqusShortname = "yourdiscussshortname"
 ```
+
 > Remember to edit the `yourdiscussshortname` appropriately.
 
 From your disqus dashboard, set your scripts `color scheme` to __auto__. See screenshot below
@@ -120,28 +111,13 @@ From your disqus dashboard, set your scripts `color scheme` to __auto__. See scr
 
 ## Custom Shortcodes
 
-This theme ships with __2 custom shortcodes__ (they both use positional parameters):
-
-1. __Video__
-    This shortcode can be used to embed a youtube video with custom styling. It takes a solo positional parameter.
-
-    ```
-    ...
-    {{< video "youtubeVideoID" >}}
-    ...
-    ```
-
-2. __Picture__
-    You want to use darkmode images when darkmode is enabled on a device and a regular image on lightmode? It takes 3 positional parameter
-
-    Store these images in the `static/images` directory.
-    ```
-    ...
-    {{< picture "lightModeImage.png" "darkModeImage.png" "Image alt text" >}}
-    ...
-    ```
+todo: document
 
 ## From the same creator
+
+> [!NOTE]
+> These are created by [@onweru](https://github.com/onweru), not me. I think it's fair to leave them in.
+> Go and check out their work!
 
 1. [Clarity Theme](https://github.com/chipzoller/hugo-clarity)
 2. [Compose Theme](https://github.com/onweru/compose)
@@ -150,4 +126,4 @@ This theme ships with __2 custom shortcodes__ (they both use positional paramete
 
 ## License
 
-This theme is available under the [MIT license](https://github.com/onweru/newsroom/blob/master/LICENSE.md).
+This theme is available under the MIT license.
