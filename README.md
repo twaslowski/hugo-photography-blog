@@ -1,42 +1,40 @@
-# Newsroom Theme
+# Hugo Photography Blog Theme
 
-This is a simple, minimalistic theme, which is inspired by [Apple's Newsroom page](https://www.apple.com/newsroom/). It uses *grid css*, *flexbox* & js (no jQuery, or related libraries).
+This is a simple theme optimized for photography blogging. It is forked from
+[onweru/newsroom](https://github.com/onweru/newsroom), but adds various shortcodes and partials that are useful for
+serving images.
 
-![Hugo Newsroom Theme](https://raw.githubusercontent.com/onweru/newsroom/master/images/screenshot.png)
+![Photography Blog Theme](./static/images/sample.png)
 
 ## Features
 
+> [!NOTE]
+> A lot of this README.md is only slightly modified from the upstream repository.
+> I do not mean to plagiarize anybody's work, and I do not take credit for it. Their README is simply good enough
+> for me to not have to change too much about it.
+
 * Blog
-* Tina CMS configuration
+* ~~Tina CMS configuration~~
 * Modern
 * Responsive
 * Deeplinks
 * Dark Mode
 * Supports native lazy loading of images & iframes
 * Syntax highlighting
-
-### Try Tina CMS
-
-From the root of your project, run:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/onweru/newsroom/master/install-tina-cms.sh | bash
-```
-
-### Deeplinks
-
-For all content published using markdown, deeplinks will be added to the pages so that you can share with precision 😃 Just   hover on a heading and the link button will pop. Click it to copy.
+* Rich support for images, including loading optimization via `srcset`
+* Primitives such as `compare` and `carousel` for displaying your images in a more powerful way
 
 ## Install Newsroom Theme
 
-__Note:__ Newsroom uses is styled in sass. Thefore, __hugo-extended version__ must be installed on your system.
+> [!NOTE] 
+> __hugo-extended version__ must be installed on your system for this theme to work as intended.
 
-### Option 1: Add Newsroom as a git submodule
+### Option 1: Add theme as a git submodule
 
 Add this theme as a Git submodule inside your Hugo site folder:
 
 ```bash
-git submodule add https://github.com/onweru/newsroom.git themes/newsroom
+git submodule add https://github.com/twaslowski/hugo-photography-blog.git themes/hugo-photography-blog
 ```
 
 ### Option 2: Add Newsroom as a hugo module __(Recommended)__
@@ -44,7 +42,7 @@ git submodule add https://github.com/onweru/newsroom.git themes/newsroom
 In your config.toml file, set `theme` field value as follows
 
 ```toml
-theme = ["github.com/onweru/newsroom"]
+theme = ["github.com/twaslowski/hugo-photography-blog"]
 ```
 
 Then run
@@ -58,15 +56,14 @@ hugo mod init yourWebsiteName && hugo mod get -u .
 From the root of your Hugo website run:
 
 ```
-git clone https://github.com/onweru/newsroom themes/newsroom
+git clone https://github.com/twaslowski/hugo-photography-blog twaslowski/hugo-photography-blog
 ```
 
 In your config.toml file, set `theme` field value as follows
 
 ```toml
-theme = "newsroom"
+theme = "hugo-photography-blog"
 ```
-
 
 ## Configuration
 
